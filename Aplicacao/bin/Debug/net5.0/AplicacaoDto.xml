@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AplicacaoDto</name>
+    </assembly>
+    <members>
+        <member name="T:AplicacaoDto.RequisicoesDto.RequisicaoGetByIdTransacaoDto">
+            <summary>
+            Requisição para obter transação por id
+            </summary>
+        </member>
+        <member name="P:AplicacaoDto.RequisicoesDto.RequisicaoGetByIdTransacaoDto.id_transacao">
+            <summary>
+            Id da transação
+            </summary>
+            <exemplo>10</exemplo>
+        </member>
+        <member name="T:AplicacaoDto.RequisicoesDto.RequisicaoInsertTransacaoDto">
+            <summary>
+            Requisição para cadastrar transação
+            </summary>
+        </member>
+        <member name="P:AplicacaoDto.RequisicoesDto.RequisicaoInsertTransacaoDto.num_cartao">
+            <summary>
+            Número do cartao 
+            </summary>
+            <exemplo>20356</exemplo>
+        </member>
+        <member name="P:AplicacaoDto.RequisicoesDto.RequisicaoInsertTransacaoDto.id_aprovacao">
+            <summary>
+            Id da aprovação
+            </summary>
+            <exemplo>10</exemplo>
+        </member>
+        <member name="P:AplicacaoDto.RequisicoesDto.RequisicaoInsertTransacaoDto.valor">
+            <summary>
+            Valor da transação
+            </summary>
+            <exemplo>100,00</exemplo>
+        </member>
+        <member name="T:AplicacaoDto.RespostaDto.RespostaDto">
+            <summary>
+            Campos base para DTOs de resposta
+            </summary>
+        </member>
+        <member name="P:AplicacaoDto.RespostaDto.RespostaDto.Mensagem">
+            <summary>
+             Mensagem de retorno
+            </summary>
+        </member>
+        <member name="T:AplicacaoDto.RespostaDto.transacaoDto.RespostaGetByIdTransacaoDto">
+            <summary>
+            Resposta com uma transação filtrada por id
+            </summary>
+        </member>
+        <member name="P:AplicacaoDto.RespostaDto.transacaoDto.RespostaGetByIdTransacaoDto.transacao">
+            <summary>
+            Resposta que retorna transação por id
+            </summary>
+        </member>
+        <member name="T:AplicacaoDto.RespostaDto.transacaoDto.RespostaGetTransacaoDto">
+            <summary>
+            Respostas contendo lista de transações registradas
+            </summary>
+        </member>
+        <member name="P:AplicacaoDto.RespostaDto.transacaoDto.RespostaGetTransacaoDto.transacoes">
+            <summary>
+            Resposta que retorna uma lista com todas as transações registradas
+            </summary>
+        </member>
+        <member name="T:AplicacaoDto.RespostaDto.transacaoDto.RespostaInsertTransacaoDto">
+            <summary>
+            Classe de resposta relacionada a transação 
+            </summary>
+        </member>
+        <member name="P:AplicacaoDto.RespostaDto.transacaoDto.RespostaInsertTransacaoDto.transacao">
+            <summary>
+            Resposta ao inserir, devolve um objeto do tipo transacao
+            </summary>
+        </member>
+    </members>
+</doc>
