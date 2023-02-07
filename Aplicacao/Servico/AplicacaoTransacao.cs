@@ -4,6 +4,7 @@ using AplicacaoDto.RequisicoesDto;
 using AplicacaoDto.RespostaDto.transacaoDto;
 using Core.Interface.Servico;
 using Dominio.Entidade;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -95,6 +96,28 @@ namespace Aplicacao.Servico
             {
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.InternalServerError, erro.Message);
             }
+        }
+        public static async Task Post()
+        {
+            var httpClient = new HttpClient();
+
+            var request = new HttpRequestMessage();
+
+            var objeto = new { nome = "Lucas", idade = 33 };
+
+            var content = ToRequest(objeto);
+
+            var response = await httpClient.PostAsync(requestUri: "https://localhost:5014/GetCartaoPorId", content);
+
+            var data = await response.Content.ReadAsStringAsync();
+        }
+
+        private static StringContent ToRequest(object obj)
+        {
+            var json = JsonConvert.SerializeObject(obj);
+            var data = new StringContent(json, Encoding.UTF8, mediaType: "application/json");
+
+            return data;
         }
 
         public static async Task Get()
