@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API_Transacao</name>
+    </assembly>
+    <members>
+        <member name="M:API_Transacao.Controllers.CRUDTransacaoController.Put(AplicacaoDto.RequisicoesDto.RequisicaoPutTransacaoDto)">
+            <summary>
+            Endpoint para atualizar transação 
+            </summary>
+            <param name="dto"></param>
+            <response code="200">Busca realizada com sucesso</response>
+            <response code="400">Campos obrigatórios não informados</response>
+            <response code="401">Acesso não autenticado</response>
+            <response code="403">Acesso não autorizado</response>
+            <response code="422">Erro de válidação de conteúdo, vide campo mensagem</response>
+            <response code="500">Erro interno na aplicação, vide campo mensagem</response>
+        </member>
+        <member name="M:API_Transacao.Controllers.CRUDTransacaoController.GetTransacaoById(AplicacaoDto.RequisicoesDto.RequisicaoGetByIdTransacaoDto)">
+            <summary>
+            Endpoint para consultar uma determinada transação
+            </summary>
+            <param name="dto"></param>
+            <returns>Retorna XXX</returns>
+            <response code="200">Esta requisição foi bem sucedida</response>
+            <response code="400">O servidor não entendeu a requisição pois está com uma sintaxe inválida</response>
+            <response code="422">Erro de validação de conteúdo, código não localizado</response>
+            <response code="500">Erro interno na aplicação, vide campo mensagem</response>
+        </member>
+        <member name="M:API_Transacao.Controllers.CRUDTransacaoController.GetAllTransaceos">
+            <summary>
+            Endpoint que retorna todas as transações registradas
+            </summary>
+            <response code="200">Busca realizada com sucesso</response>
+            <response code="400">Campos obrigatórios não informados</response>
+            <response code="401">Acesso não autenticado</response>
+            <response code="403">Acesso não autorizado</response>
+            <response code="404">Consulta não retornou dados</response>
+            <response code="500">Erro interno na aplicação, vide campo mensagem</response>
+        </member>
+        <member name="M:API_Transacao.Controllers.CRUDTransacaoController.Insert(AplicacaoDto.RequisicoesDto.RequisicaoInsertTransacaoDto)">
+            <summary>
+            Endpoint para inserir transação 
+            </summary>
+            <param name="dto"></param>
+            <response code="201">Cadastro realizado com sucesso</response>
+            <response code="400">Campos obrigatórios não informados</response>
+            <response code="401">Acesso não autenticado</response>
+            <response code="403">Acesso não autorizado</response>
+            <response code="422">Erro de válidação de conteúdo, vide campo mensagem</response>
+            <response code="500">Erro interno na aplicação, vide campo mensagem</response>
+        </member>
+    </members>
+</doc>
