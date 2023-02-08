@@ -83,7 +83,8 @@ namespace Aplicacao.Servico
         public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj)
         {
             string mensagem = "";
-
+            Post();
+            Get();
             if (!mensagem.Equals(string.Empty))
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.UnprocessableEntity, mensagem);
             try
@@ -103,7 +104,7 @@ namespace Aplicacao.Servico
 
             var request = new HttpRequestMessage();
 
-            var objeto = new { nome = "Lucas", idade = 33 };
+            var objeto = new { id_cartao = 1, fkAgencia = 1, idConta = 6 };
 
             var content = ToRequest(objeto);
 
@@ -111,7 +112,6 @@ namespace Aplicacao.Servico
 
             var data = await response.Content.ReadAsStringAsync();
         }
-
         private static StringContent ToRequest(object obj)
         {
             var json = JsonConvert.SerializeObject(obj);

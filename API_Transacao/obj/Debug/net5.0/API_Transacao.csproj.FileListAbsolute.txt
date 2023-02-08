@@ -162,3 +162,4 @@ C:\Users\lucas.dias\Desktop\API_Transacao\API_Transacao\obj\Debug\net5.0\API_Tra
 C:\Users\lucas.dias\Desktop\API_Transacao\API_Transacao\obj\Debug\net5.0\API_Transacao.pdb
 C:\Users\lucas.dias\Desktop\API_Transacao\API_Transacao\obj\Debug\net5.0\API_Transacao.genruntimeconfig.cache
 C:\Users\lucas.dias\Desktop\API_Transacao\API_Transacao\obj\Debug\net5.0\ref\API_Transacao.dll
+C:\Users\lucas.dias\Desktop\API_Transacao\API_Transacao\bin\Debug\net5.0\Newtonsoft.Json.dll
