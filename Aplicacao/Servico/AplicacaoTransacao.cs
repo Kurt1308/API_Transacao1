@@ -84,7 +84,7 @@ namespace Aplicacao.Servico
         {
             string mensagem = "";
             var obj1 = Post();
-            //Get();
+            Get();
             if (!mensagem.Equals(string.Empty))
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.UnprocessableEntity, mensagem);
             try
@@ -98,7 +98,7 @@ namespace Aplicacao.Servico
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.InternalServerError, erro.Message);
             }
         }
-        public static async Task Post()
+        public static async Task<object> Post()
         {
             var httpClient = new HttpClient();
 
@@ -108,10 +108,10 @@ namespace Aplicacao.Servico
 
             var content = ToRequest(objeto);
 
-            var response = await httpClient.PostAsync(requestUri: "https://localhost:5014/GetCartaoPorId", content);
+            var response = httpClient.PostAsync(requestUri: "https://localhost:5014/GetCartaoPorId", content);
 
-            var data = await response.Content.ReadAsStringAsync();
-
+            var data = response.Result;
+            return data;
         }
         private static StringContent ToRequest(object obj)
         {
