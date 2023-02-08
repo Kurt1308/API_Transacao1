@@ -83,8 +83,8 @@ namespace Aplicacao.Servico
         public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj)
         {
             string mensagem = "";
-            Post();
-            Get();
+            var obj1 = Post();
+            //Get();
             if (!mensagem.Equals(string.Empty))
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.UnprocessableEntity, mensagem);
             try
@@ -111,6 +111,7 @@ namespace Aplicacao.Servico
             var response = await httpClient.PostAsync(requestUri: "https://localhost:5014/GetCartaoPorId", content);
 
             var data = await response.Content.ReadAsStringAsync();
+
         }
         private static StringContent ToRequest(object obj)
         {
