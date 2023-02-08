@@ -84,7 +84,7 @@ namespace Aplicacao.Servico
         {
             string mensagem = "";
             var obj1 = Post();
-            Get();
+            //Get();
             if (!mensagem.Equals(string.Empty))
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.UnprocessableEntity, mensagem);
             try
