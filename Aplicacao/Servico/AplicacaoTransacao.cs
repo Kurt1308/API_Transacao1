@@ -85,9 +85,7 @@ namespace Aplicacao.Servico
         public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj)
         {
             string mensagem = "";
-            //Post();
-            //Get();
-            bool check = GetApi(obj.valor);
+            bool check = VerificaLimiteCartao(obj.valor, obj.num_cartao);
             if(check == false)
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Este cartão não possui limite disponível");
             if (!mensagem.Equals(string.Empty))
@@ -103,7 +101,7 @@ namespace Aplicacao.Servico
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.InternalServerError, erro.Message);
             }
         }
-        public static bool GetApi(decimal valor)
+        public static bool VerificaLimiteCartao(decimal valor, long num_cartao)
         {
 
             using var client = new HttpClient();
@@ -112,14 +110,13 @@ namespace Aplicacao.Servico
             client.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/json"));
 
-            var objeto = new { id_cartao = 1, fkAgencia = 1, idConta = 6 };
+            var objeto = new { id_cartao = 0, fkAgencia = 0, idConta = 0 };
 
-            var content = ToRequest(objeto);
+            var objeto1 = selecionaCartao(objeto, num_cartao);
 
-            var response = client.PostAsync("https://localhost:5014/GetCartaoPorId", content).Result;
+            var response = client.PostAsync("https://localhost:5014/GetCartaoPorId", objeto1).Result;
             if (response.IsSuccessStatusCode)
             {
-                // Parse the response body
                 var dataObjects = response.Content.ReadAsStringAsync().Result;
                 var json = JsonConvert.SerializeObject(dataObjects);
                 if (dataObjects.Contains("limite_saldo_disponivel"))
@@ -127,7 +124,7 @@ namespace Aplicacao.Servico
                     
                     var valor22 = Convert.ToDecimal(GetValor(dataObjects));
                     int v1 = Convert.ToInt32(valor);
-                    int v2 = Convert.ToInt32(valor22);
+                    decimal v2 = valor22;
 
                     if (v1 <= v2)
                     return true;
@@ -152,6 +149,25 @@ namespace Aplicacao.Servico
             }
             return dataObjects;
         }
+        private static StringContent selecionaCartao(object obj, long num_cartao)
+        {
+            if(num_cartao == 2000000000000000)
+            {
+                var objeto = new { id_cartao = 12, fkAgencia = 2, idConta = 5 };
+                var json = JsonConvert.SerializeObject(objeto);
+                var data = new StringContent(json, Encoding.UTF8, mediaType: "application/json");
+                return data;
+            } else if ( num_cartao == 1000000000000000)
+            {
+                var objeto1 = new { id_cartao = 11, fkAgencia = 1, idConta = 6 };
+                var json1 = JsonConvert.SerializeObject(objeto1);
+                var data1 = new StringContent(json1, Encoding.UTF8, mediaType: "application/json");
+                return data1;
+            }
+            var json2 = JsonConvert.SerializeObject(obj);
+            var data2 = new StringContent(json2, Encoding.UTF8, mediaType: "application/json");
+            return data2;
+        }
         //public static async Task<object> Post()
         //{
         //    var httpClient = new HttpClient();
@@ -167,13 +183,13 @@ namespace Aplicacao.Servico
         //    var data = await response.Content.ReadAsStringAsync();
         //    return data;
         //}
-        private static StringContent ToRequest(object obj)
-        {
-            var json = JsonConvert.SerializeObject(obj);
-            var data = new StringContent(json, Encoding.UTF8, mediaType: "application/json");
+        //private static StringContent ToRequest(object obj)
+        //{
+        //    var json = JsonConvert.SerializeObject(obj);
+        //    var data = new StringContent(json, Encoding.UTF8, mediaType: "application/json");
 
-            return data;
-        }
+        //    return data;
+        //}
 
         //public static async Task Get()
         //{
