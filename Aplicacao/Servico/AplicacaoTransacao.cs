@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -83,8 +85,9 @@ namespace Aplicacao.Servico
         public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj)
         {
             string mensagem = "";
-            var obj1 = Post();
+            //Post();
             //Get();
+            GetApi();
             if (!mensagem.Equals(string.Empty))
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.UnprocessableEntity, mensagem);
             try
@@ -98,21 +101,51 @@ namespace Aplicacao.Servico
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.InternalServerError, erro.Message);
             }
         }
-        public static async Task<object> Post()
+        public static bool GetApi()
         {
-            var httpClient = new HttpClient();
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:5014/GetCartaoPorId");
 
-            var request = new HttpRequestMessage();
+            client.DefaultRequestHeaders.Accept.Add(
+       new MediaTypeWithQualityHeaderValue("application/json"));
 
             var objeto = new { id_cartao = 1, fkAgencia = 1, idConta = 6 };
 
             var content = ToRequest(objeto);
 
-            var response = httpClient.PostAsync(requestUri: "https://localhost:5014/GetCartaoPorId", content);
+            var response = client.PostAsync("https://localhost:5014/GetCartaoPorId", content).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                // Parse the response body
+                var dataObjects = response.Content.ReadAsStringAsync().Result;
+                foreach (var d in dataObjects)
+                {
+                    Console.WriteLine("{0}", d);
+                }
+            }
+            else
+            {
+                Console.WriteLine("{0} ({1})", (int)response.StatusCode,
+                              response.ReasonPhrase);
+            }
 
-            var data = response.Result;
-            return data;
+            return true;
         }
+        //public static async Task<object> Post()
+        //{
+        //    var httpClient = new HttpClient();
+
+        //    var request = new HttpRequestMessage();
+
+        //    var objeto = new { id_cartao = 1, fkAgencia = 1, idConta = 6 };
+
+        //    var content = ToRequest(objeto);
+
+        //    var response = await httpClient.PostAsync(requestUri: "https://localhost:5014/GetCartaoPorId", content);
+
+        //    var data = await response.Content.ReadAsStringAsync();
+        //    return data;
+        //}
         private static StringContent ToRequest(object obj)
         {
             var json = JsonConvert.SerializeObject(obj);
@@ -121,13 +154,13 @@ namespace Aplicacao.Servico
             return data;
         }
 
-        public static async Task Get()
-        {
-            var httpClient = new HttpClient();
+        //public static async Task Get()
+        //{
+        //    var httpClient = new HttpClient();
 
-            var response = await httpClient.GetAsync(requestUri: "https://localhost:5014/GetTodosOsCartoes");
+        //    var response = await httpClient.GetAsync(requestUri: "https://localhost:5014/GetTodosOsCartoes");
 
-            var data = await response.Content.ReadAsStringAsync();
-        }
+        //    var data = await response.Content.ReadAsStringAsync();
+        //}
     }
 }
