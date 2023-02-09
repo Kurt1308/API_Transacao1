@@ -87,7 +87,9 @@ namespace Aplicacao.Servico
             string mensagem = "";
             //Post();
             //Get();
-            GetApi(obj.valor);
+            bool check = GetApi(obj.valor);
+            if(check == false)
+                return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Este cartão não possui limite disponível");
             if (!mensagem.Equals(string.Empty))
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.UnprocessableEntity, mensagem);
             try
@@ -108,7 +110,7 @@ namespace Aplicacao.Servico
             client.BaseAddress = new Uri("https://localhost:5014/GetCartaoPorId");
 
             client.DefaultRequestHeaders.Accept.Add(
-       new MediaTypeWithQualityHeaderValue("application/json"));
+            new MediaTypeWithQualityHeaderValue("application/json"));
 
             var objeto = new { id_cartao = 1, fkAgencia = 1, idConta = 6 };
 
@@ -120,8 +122,14 @@ namespace Aplicacao.Servico
                 // Parse the response body
                 var dataObjects = response.Content.ReadAsStringAsync().Result;
                 var json = JsonConvert.SerializeObject(dataObjects);
-                if (valor > json.Length)
+                if (dataObjects.Contains("limite_saldo_disponivel"))
                 {
+                    
+                    var valor22 = Convert.ToDecimal(GetValor(dataObjects));
+                    int v1 = Convert.ToInt32(valor);
+                    int v2 = Convert.ToInt32(valor22);
+
+                    if (v1 <= v2)
                     return true;
                 }
             }
@@ -131,6 +139,18 @@ namespace Aplicacao.Servico
             }
 
             return false;
+        }
+        public static string GetValor(string dataObjects)
+        {
+            if (dataObjects.Contains("limite_saldo_disponivel"))
+            {
+                var aiai = dataObjects.Split("limite_saldo_disponivel")[1];
+                var eiei = aiai.Split(':')[1];
+                var yy = eiei.Split(',')[0];
+                var ww = yy.Replace('.', ',');
+                return ww;
+            }
+            return dataObjects;
         }
         //public static async Task<object> Post()
         //{

@@ -4,6 +4,60 @@
         <name>Dominio</name>
     </assembly>
     <members>
+        <member name="P:Dominio.Entidade.cartaoParaCheck.cartao.id_cartao">
+            <summary>
+            Id do cartao
+            </summary>
+            <exemplo>10</exemplo>
+        </member>
+        <member name="P:Dominio.Entidade.cartaoParaCheck.cartao.num_cartao">
+            <summary>
+            Número do cartao 
+            </summary>
+            <exemplo>20356</exemplo>
+        </member>
+        <member name="P:Dominio.Entidade.cartaoParaCheck.cartao.mes_ano_vencimento">
+            <summary>
+            Mês e ano de vencimento do cartão no formato AAAAMM
+            </summary>
+            <exemplo>202005</exemplo>
+        </member>
+        <member name="P:Dominio.Entidade.cartaoParaCheck.cartao.cvc">
+            <summary>
+            Código de segurança do cartão
+            </summary>
+            <exemplo>365</exemplo>
+        </member>
+        <member name="P:Dominio.Entidade.cartaoParaCheck.cartao.agencia_id_agencia">
+            <summary>
+            Id da agencia relacionada a conta
+            </summary>
+            <exemplo>2</exemplo>
+        </member>
+        <member name="P:Dominio.Entidade.cartaoParaCheck.cartao.conta_id_conta">
+            <summary>
+            Id da conta relacionada ao contão
+            </summary>
+            <exemplo>2</exemplo>
+        </member>
+        <member name="P:Dominio.Entidade.cartaoParaCheck.cartao.limite_saldo">
+            <summary>
+            Limite de saldo do cartão
+            </summary>
+            <exemplo>1000,00</exemplo>
+        </member>
+        <member name="P:Dominio.Entidade.cartaoParaCheck.cartao.limite_saldo_disponivel">
+            <summary>
+            Limite de saldo disponível do cartão
+            </summary>
+            <exemplo>100,00</exemplo>
+        </member>
+        <member name="P:Dominio.Entidade.cartaoParaCheck.cartao.situacao">
+            <summary>
+            Situação atual da conta
+            </summary>
+            <exemplo>Ativa; Inativa</exemplo>
+        </member>
         <member name="T:Dominio.Entidade.transacao">
             <summary>
             Entidade que mapeia tabela transacao no banco de dados
