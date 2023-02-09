@@ -87,7 +87,7 @@ namespace Aplicacao.Servico
             string mensagem = "";
             //Post();
             //Get();
-            GetApi();
+            GetApi(obj.valor);
             if (!mensagem.Equals(string.Empty))
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.UnprocessableEntity, mensagem);
             try
@@ -101,8 +101,9 @@ namespace Aplicacao.Servico
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.InternalServerError, erro.Message);
             }
         }
-        public static bool GetApi()
+        public static bool GetApi(decimal valor)
         {
+
             using var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:5014/GetCartaoPorId");
 
@@ -118,18 +119,17 @@ namespace Aplicacao.Servico
             {
                 // Parse the response body
                 var dataObjects = response.Content.ReadAsStringAsync().Result;
-                foreach (var d in dataObjects)
+                if(valor > dataObjects[5])
                 {
-                    Console.WriteLine("{0}", d);
+                    return true;
                 }
             }
             else
             {
-                Console.WriteLine("{0} ({1})", (int)response.StatusCode,
-                              response.ReasonPhrase);
+                return false;
             }
 
-            return true;
+            return false;
         }
         //public static async Task<object> Post()
         //{
