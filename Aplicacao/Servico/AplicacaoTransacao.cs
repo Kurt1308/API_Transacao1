@@ -119,7 +119,8 @@ namespace Aplicacao.Servico
             {
                 // Parse the response body
                 var dataObjects = response.Content.ReadAsStringAsync().Result;
-                if(valor > dataObjects[5])
+                var json = JsonConvert.SerializeObject(dataObjects);
+                if (valor > json.Length)
                 {
                     return true;
                 }
