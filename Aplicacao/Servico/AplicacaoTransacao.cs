@@ -96,7 +96,7 @@ namespace Aplicacao.Servico
             {
                 
                 transacao retornoTransacao = _servicoTransacao.insereTransacao(obj.num_cartao, obj.valor, obj.id_aprovacao);
-                return _mapperTransacao.MapperToDtoInsert(retornoTransacao != null ? HttpStatusCode.Created : HttpStatusCode.InternalServerError, retornoTransacao != null ? mensagem : erroInserir, retornoTransacao);
+                return _mapperTransacao.MapperToDtoInsert(retornoTransacao != null ? HttpStatusCode.Created : HttpStatusCode.InternalServerError, retornoTransacao != null ? "Transação efetuada com sucesso" : erroInserir, retornoTransacao);
             }
             catch (Exception erro)
             {
