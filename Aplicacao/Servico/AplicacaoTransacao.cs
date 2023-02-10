@@ -86,12 +86,13 @@ namespace Aplicacao.Servico
         public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj)
         {
             string mensagem = "";
-            decimal check = VerificaLimiteCartao(obj.valor, obj.num_cartao);
-            if(check < 0)
+
+            decimal checaLimite = VerificaLimiteCartao(obj.valor, obj.num_cartao);
+            if(checaLimite < 0)
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Este cartão não possui limite disponível.");
             
-            bool check1 = UpdateCartao(check, obj.num_cartao);
-            if (check1 = false)
+            bool checkUpdate = UpdateCartao(checaLimite, obj.num_cartao);
+            if (checkUpdate = false)
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Não foi possível atualizar o cartão.");
 
             if (!mensagem.Equals(string.Empty))
@@ -173,10 +174,10 @@ namespace Aplicacao.Servico
             }
             else
             {
-                decimal a = 0;
+                decimal a = -1;
                 return a;
             }
-            decimal b = 0;
+            decimal b = -1;
             return b;
         }
         public static string GetValor(string dataObjects)
