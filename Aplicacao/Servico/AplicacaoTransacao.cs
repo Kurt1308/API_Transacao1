@@ -184,11 +184,11 @@ namespace Aplicacao.Servico
         {
             if (dataObjects.Contains("limite_saldo_disponivel"))
             {
-                var aiai = dataObjects.Split("limite_saldo_disponivel")[1];
-                var eiei = aiai.Split(':')[1];
-                var yy = eiei.Split(',')[0];
-                var ww = yy.Replace('.', ',');
-                return ww;
+                var processo1 = dataObjects.Split("limite_saldo_disponivel")[1];
+                var processo2 = processo1.Split(':')[1];
+                var processo3 = processo2.Split(',')[0];
+                var valor = processo3.Replace('.', ',');
+                return valor;
             }
             return dataObjects;
         }
