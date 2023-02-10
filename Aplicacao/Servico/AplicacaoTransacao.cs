@@ -7,6 +7,7 @@ using Dominio.Entidade;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -89,7 +90,7 @@ namespace Aplicacao.Servico
             if(check < 0)
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Este cartão não possui limite disponível.");
             
-            //bool checkUpdateCartao = ExecutaUpdateCartao(obj.valor, obj.num_cartao);
+            bool check1 = UpdateCartao(check, obj.num_cartao);
 
             if (!mensagem.Equals(string.Empty))
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.UnprocessableEntity, mensagem);
@@ -104,114 +105,38 @@ namespace Aplicacao.Servico
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.InternalServerError, erro.Message);
             }
         }
-        //public static bool ExecutaUpdateCartao(decimal valor, long num_cartao)
-        //{
-        //    using var client = new HttpClient();
-        //    using var client2 = new HttpClient();
-        //    client2.DefaultRequestHeaders.Accept.Add(
-        //    new MediaTypeWithQualityHeaderValue("application/json"));
-
-        //    client.DefaultRequestHeaders.Accept.Add(
-        //    new MediaTypeWithQualityHeaderValue("application/json"));
-
-        //    var objeto = new { id_cartao = 0, agencia_id_agencia = 0, conta_id_conta = 0, limite_saldo = 0,situacao = 0 };
-
-        //    var objeto1 = selecionarCartao(objeto, num_cartao);
-        //    var response1 = client.PostAsync("https://localhost:5014/GetCartaoPorId", objeto1).Result;
-        //    if (response1.IsSuccessStatusCode)
-        //    {
-        //        var dataObjects = response1.Content.ReadAsStringAsync().Result;
-        //        var json = JsonConvert.SerializeObject(dataObjects);
-        //        if (dataObjects.Contains("limite_saldo_disponivel"))
-        //        {
-
-        //            var valor222 = Convert.ToDecimal(GetValor(dataObjects));
-        //            int v1 = Convert.ToInt32(valor);
-        //            decimal v22 = valor222;
-
-        //            var objeto11 = selecionarCartao(v22, num_cartao);
-
-        //            var obb = new
-        //            {
-        //                id_cartao = 11,
-        //                agencia_id_agencia = 1,
-        //                conta_id_conta = 6,
-        //                limite_saldo = 500,
-        //                situacao = 1
-        //            };
-        //            var obbb = converteJson(obb);
-
-        //        var response22 = client2.PutAsync("https://localhost:5014/AtualizaCartao", obbb).Result;
-        //            if (response22.IsSuccessStatusCode)
-        //            {
-        //                var dataObjects2 = response22.Content.ReadAsStringAsync().Result;
-        //                var json2 = JsonConvert.SerializeObject(dataObjects2);
-        //                if (dataObjects.Contains("limite_saldo_disponivel"))
-        //                {
-
-        //                    var valor22 = Convert.ToDecimal(GetValor(dataObjects));
-        //                    int v12 = Convert.ToInt32(valor);
-        //                    decimal v2 = valor22;
-
-        //                    if (v1 <= v2)
-        //                        return true;
-        //                }
-        //            }
-        //            else
-        //            {
-        //                return false;
-        //            }
-
-
-        //        }
-        //    }
-
-        //        var response = client.PutAsync("https://localhost:5014/AtualizaCartao", objeto1).Result;
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        var dataObjects = response.Content.ReadAsStringAsync().Result;
-        //        var json = JsonConvert.SerializeObject(dataObjects);
-        //        if (dataObjects.Contains("limite_saldo_disponivel"))
-        //        {
-
-        //            var valor22 = Convert.ToDecimal(GetValor(dataObjects));
-        //            int v1 = Convert.ToInt32(valor);
-        //            decimal v2 = valor22;
-
-        //            if (v1 <= v2)
-        //                return true;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-
-        //    return false;
-        //}
-        //private static StringContent converteJson(object obj)
-        //{
-        //    var json2 = JsonConvert.SerializeObject(obj);
-        //    var data2 = new StringContent(json2, Encoding.UTF8, mediaType: "application/json");
-        //    return data2;
-        //}
-        private static StringContent selecionarCartao(object obj, long num_cartao)
+        public static bool UpdateCartao(decimal valor, long num_cartao)
+        {
+                var cartao = selecionarCartao(valor, num_cartao);
+                using var client = new HttpClient();
+                var response = client.PutAsync("https://localhost:5014/AtualizaCartao", cartao).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                    return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private static StringContent selecionarCartao(decimal valor, long num_cartao)
         {
             if (num_cartao == 2000000000000000)
             {
-                var objeto = new { id_cartao = 12, agencia_id_agencia = 2, conta_id_conta = 5, limite_saldo = obj, situacao = 1 };
+                var objeto = new { id_cartao = 12, agencia_id_agencia = 2, conta_id_conta = 5, limite_saldo = valor, situacao = 1 };
                 var json = JsonConvert.SerializeObject(objeto);
                 var data = new StringContent(json, Encoding.UTF8, mediaType: "application/json");
                 return data;
             }
             else if (num_cartao == 1000000000000000)
             {
-                var objeto1 = new { id_cartao = 11, fkAgencia = 1, idConta = 6, limite_saldo = obj, situacao = 1 };
+                var objeto1 = new { id_cartao = 11, agencia_id_agencia = 1, conta_id_conta = 6, limite_saldo = valor, situacao = 1 };
                 var json1 = JsonConvert.SerializeObject(objeto1);
                 var data1 = new StringContent(json1, Encoding.UTF8, mediaType: "application/json");
                 return data1;
             }
-            var json2 = JsonConvert.SerializeObject(obj);
+            var objeto2 = new { id_cartao = 0, agencia_id_agencia = 0, conta_id_conta = 0, limite_saldo = 0, situacao = 0 };
+            var json2 = JsonConvert.SerializeObject(objeto2);
             var data2 = new StringContent(json2, Encoding.UTF8, mediaType: "application/json");
             return data2;
         }
@@ -283,36 +208,5 @@ namespace Aplicacao.Servico
             var data2 = new StringContent(json2, Encoding.UTF8, mediaType: "application/json");
             return data2;
         }
-        //public static async Task<object> Post()
-        //{
-        //    var httpClient = new HttpClient();
-
-        //    var request = new HttpRequestMessage();
-
-        //    var objeto = new { id_cartao = 1, fkAgencia = 1, idConta = 6 };
-
-        //    var content = ToRequest(objeto);
-
-        //    var response = await httpClient.PostAsync(requestUri: "https://localhost:5014/GetCartaoPorId", content);
-
-        //    var data = await response.Content.ReadAsStringAsync();
-        //    return data;
-        //}
-        //private static StringContent ToRequest(object obj)
-        //{
-        //    var json = JsonConvert.SerializeObject(obj);
-        //    var data = new StringContent(json, Encoding.UTF8, mediaType: "application/json");
-
-        //    return data;
-        //}
-
-        //public static async Task Get()
-        //{
-        //    var httpClient = new HttpClient();
-
-        //    var response = await httpClient.GetAsync(requestUri: "https://localhost:5014/GetTodosOsCartoes");
-
-        //    var data = await response.Content.ReadAsStringAsync();
-        //}
     }
 }
