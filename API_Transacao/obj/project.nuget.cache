@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vmt82xWI8ShM9Oo7k4++kV9Y11m3IKckV8FOu1fwppKbvTk7wNGj0p5RMJxh13cr22OCpEa7Mv3STV00Vh/iYw==",
+  "dgSpecHash": "xkLvoWurwsVH27mvRFhsyhWm2ZCn3jcXMIc/No5I1+5xc0tLOfHCMBWmc+hS5toYhbUFhEbr0T62O6eS2DeTBg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\API_Transacao\\API_Transacao.csproj",
+  "projectFilePath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\API_Transacao\\API_Transacao.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas.dias\\.nuget\\packages\\autofac\\6.3.0\\autofac.6.3.0.nupkg.sha512",
     "C:\\Users\\lucas.dias\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

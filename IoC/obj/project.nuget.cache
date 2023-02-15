@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4o6NdE9BUrqYyc/3e+MbDa4j7llLxbSCeloI3rBzGVifVcUOYJa1IyinZyO6lW+zgzWs4hZHwOCDgW/kzapRwA==",
+  "dgSpecHash": "ewe2GRKSp1z0/IVSDep8vcBlDgkR6ScSH7t64DgNC+v+SGgim555NwmG4K+iiWHIpl/Gp5Y+vXnZFYsgFgc8hg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\IoC\\IoC.csproj",
+  "projectFilePath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\IoC\\IoC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas.dias\\.nuget\\packages\\autofac\\6.3.0\\autofac.6.3.0.nupkg.sha512",
     "C:\\Users\\lucas.dias\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

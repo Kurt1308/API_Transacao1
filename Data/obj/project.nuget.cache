@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jOYysBPVjxfps+vsfE5xoZniMZfFH2XUNSuOJuOP+UuRXXWjhEPQdxb/SaiIRKLKwfESnVXYeXCYdiTu5jbRkA==",
+  "dgSpecHash": "OSH5W2tjexC7Qh54HYCZNgWwukGkqgxTyC6o4n2Y/1HOE3KLC80acL5+3WkDhfeoAQM/YGZtrXcp6rDu6wWR9g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Data\\Data.csproj",
+  "projectFilePath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Data\\Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas.dias\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\lucas.dias\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

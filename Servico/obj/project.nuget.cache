@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NNpa50bm+pDowRxqECxESW7DesZFu9RiN52+1FlrtjZ3MYtuLKYhx21M4vqTLHFkvYuhXzhE8L5lADTVXOf1Sg==",
+  "dgSpecHash": "oO8DBWY6hdbTdTlJd9dW6M9YPbXqvfKFQf7cGSPAAZBHlajPCsMV/TFugDC6SfafOmCWJyyNKKxVt13BUTAIBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Servico\\Servico.csproj",
+  "projectFilePath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Servico\\Servico.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

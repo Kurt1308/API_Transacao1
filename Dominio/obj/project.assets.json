@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Dominio\\Dominio.csproj",
+      "projectUniqueName": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Dominio\\Dominio.csproj",
       "projectName": "Dominio",
-      "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Dominio\\Dominio.csproj",
+      "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Dominio\\Dominio.csproj",
       "packagesPath": "C:\\Users\\lucas.dias\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Dominio\\obj\\",
+      "outputPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lucas.dias\\AppData\\Roaming\\NuGet\\NuGet.Config",

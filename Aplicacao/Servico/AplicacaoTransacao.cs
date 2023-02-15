@@ -82,7 +82,7 @@ namespace Aplicacao.Servico
                 return _mapperTransacao.MapperToDtoGetTransacao(HttpStatusCode.InternalServerError, Erro.ToString(), null);
             }
         }
-
+        
         public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj)
         {
             string mensagem = "";
@@ -92,7 +92,7 @@ namespace Aplicacao.Servico
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Este cartão não possui limite disponível.");
             
             bool checkUpdate = UpdateCartao(checaLimite, obj.num_cartao);
-            if (checkUpdate = false)
+            if (!checkUpdate)
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Não foi possível atualizar o cartão.");
 
             if (!mensagem.Equals(string.Empty))
@@ -145,7 +145,6 @@ namespace Aplicacao.Servico
         }
         public static decimal VerificaLimiteCartao(decimal valor, long num_cartao)
         {
-
             using var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:5014/GetCartaoPorId");
 
@@ -161,7 +160,7 @@ namespace Aplicacao.Servico
             {
                 var dataObjects = response.Content.ReadAsStringAsync().Result;
                 var json = JsonConvert.SerializeObject(dataObjects);
-                if (dataObjects.Contains("limite_saldo_disponivel"))
+                if (dataObjects.Contains("limite_saldo"))
                 {
                     
                     var valor22 = Convert.ToDecimal(GetValor(dataObjects));
@@ -182,9 +181,9 @@ namespace Aplicacao.Servico
         }
         public static string GetValor(string dataObjects)
         {
-            if (dataObjects.Contains("limite_saldo_disponivel"))
+            if (dataObjects.Contains("limite_saldo"))
             {
-                var processo1 = dataObjects.Split("limite_saldo_disponivel")[1];
+                var processo1 = dataObjects.Split("limite_saldo")[1];
                 var processo2 = processo1.Split(':')[1];
                 var processo3 = processo2.Split(',')[0];
                 var valor = processo3.Replace('.', ',');

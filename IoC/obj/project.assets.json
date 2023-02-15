@@ -5716,11 +5716,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\IoC\\IoC.csproj",
+      "projectUniqueName": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\IoC\\IoC.csproj",
       "projectName": "IoC",
-      "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\IoC\\IoC.csproj",
+      "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\IoC\\IoC.csproj",
       "packagesPath": "C:\\Users\\lucas.dias\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\IoC\\obj\\",
+      "outputPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\IoC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lucas.dias\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5737,17 +5737,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Adaptador\\Adaptador.csproj": {
-              "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Adaptador\\Adaptador.csproj"
+            "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Adaptador\\Adaptador.csproj": {
+              "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Adaptador\\Adaptador.csproj"
             },
-            "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Aplicacao\\Aplicacao.csproj": {
-              "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Aplicacao\\Aplicacao.csproj"
+            "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Aplicacao\\Aplicacao.csproj": {
+              "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Aplicacao\\Aplicacao.csproj"
             },
-            "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Repositorio\\Repositorio.csproj": {
-              "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Repositorio\\Repositorio.csproj"
+            "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Repositorio\\Repositorio.csproj": {
+              "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Repositorio\\Repositorio.csproj"
             },
-            "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Servico\\Servico.csproj": {
-              "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Servico\\Servico.csproj"
+            "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Servico\\Servico.csproj": {
+              "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Servico\\Servico.csproj"
             }
           }
         }
