@@ -30,7 +30,8 @@ namespace API_Transacao.Controllers
         [HttpPut("AtualizaCartao")]
         public RespostaPutTransacaoDto Put([FromBody] RequisicaoPutTransacaoDto dto)
         {
-            var retorno = _aplicacaoTransacao.AtualizarTransacao(dto);
+            var accessToken = HttpContext.Request.Headers["Authorization"];
+            var retorno = _aplicacaoTransacao.AtualizarTransacao(dto, accessToken);
             HttpContext.Response.StatusCode = (int)retorno.codRetorno;
             return retorno;
         }

@@ -32,7 +32,7 @@ namespace Aplicacao.Servico
             _mapperTransacao = mapperTransacao;
         }
 
-        public RespostaPutTransacaoDto AtualizarTransacao(RequisicaoPutTransacaoDto obj)
+        public RespostaPutTransacaoDto AtualizarTransacao(RequisicaoPutTransacaoDto obj, string accessToken)
         {
             string mensagem = "";
             if (!mensagem.Equals(string.Empty))
@@ -165,7 +165,7 @@ namespace Aplicacao.Servico
                 {
                     
                     var valor22 = Convert.ToDecimal(GetValor(dataObjects));
-                    int v1 = Convert.ToInt32(valor);
+                    decimal v1 = valor;
                     decimal v2 = valor22;
 
                     decimal v = v2 - v1;

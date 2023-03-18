@@ -13,6 +13,6 @@ namespace Aplicacao.Interface
         RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto requisicaoInsertTransacaoDto);
         RespostaGetTransacaoDto GetAllTransacoes();
         RespostaGetByIdTransacaoDto GetTransacaoById(RequisicaoGetByIdTransacaoDto dto);
-        RespostaPutTransacaoDto AtualizarTransacao(RequisicaoPutTransacaoDto dto);
+        RespostaPutTransacaoDto AtualizarTransacao(RequisicaoPutTransacaoDto dto, string accessToken);
     }
 }
