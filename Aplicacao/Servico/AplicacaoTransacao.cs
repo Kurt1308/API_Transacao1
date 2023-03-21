@@ -85,7 +85,7 @@ namespace Aplicacao.Servico
         
         public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj, string accessToken)
         {
-            string mensagem = "";
+            string mensagem = accessToken;
 
             decimal checaLimite = VerificaLimiteCartao(obj.valor, obj.num_cartao, accessToken);
             if(checaLimite < 0)
@@ -110,9 +110,19 @@ namespace Aplicacao.Servico
         }
         public static bool UpdateCartao(decimal valor, long num_cartao, string accessToken)
         {
-                var cartao = selecionarCartao(valor, num_cartao);
-                using var client = new HttpClient();
-                var response = client.PutAsync("https://localhost:5014/AtualizaCartao", cartao).Result;
+            //Consertar
+            using var client = new HttpClient();
+            var cartao = selecionarCartao(valor, num_cartao);
+            client.BaseAddress = new Uri("https://localhost:5014/GetCartaoPorId");
+            client.DefaultRequestHeaders.Accept.Add(
+            new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Accept.Clear();
+            string token = accessToken.Split(" ")[1];
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+
+
+            var response = client.PutAsync("https://localhost:5014/AtualizaCartao", cartao).Result;
             if (response.IsSuccessStatusCode)
             {
                     return true;
@@ -147,9 +157,11 @@ namespace Aplicacao.Servico
         {
             using var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:5014/GetCartaoPorId");
-
             client.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Accept.Clear();
+            string token = accessToken.Split(" ")[1];
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             var objeto = new { id_cartao = 0, fkAgencia = 0, idConta = 0 };
 
