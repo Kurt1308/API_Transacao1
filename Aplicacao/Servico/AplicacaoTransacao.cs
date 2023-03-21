@@ -32,7 +32,7 @@ namespace Aplicacao.Servico
             _mapperTransacao = mapperTransacao;
         }
 
-        public RespostaPutTransacaoDto AtualizarTransacao(RequisicaoPutTransacaoDto obj, string accessToken)
+        public RespostaPutTransacaoDto AtualizarTransacao(RequisicaoPutTransacaoDto obj)
         {
             string mensagem = "";
             if (!mensagem.Equals(string.Empty))
@@ -83,15 +83,14 @@ namespace Aplicacao.Servico
             }
         }
         
-        public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj)
+        public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj, string accessToken)
         {
             string mensagem = "";
-
-            decimal checaLimite = VerificaLimiteCartao(obj.valor, obj.num_cartao);
+            decimal checaLimite = VerificaLimiteCartao(accessToken, obj.valor, obj.num_cartao);
             if(checaLimite < 0)
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Este cartão não possui limite disponível.");
             
-            bool checkUpdate = UpdateCartao(checaLimite, obj.num_cartao);
+            bool checkUpdate = UpdateCartao(accessToken, checaLimite, obj.num_cartao);
             if (!checkUpdate)
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Não foi possível atualizar o cartão.");
 
@@ -108,7 +107,7 @@ namespace Aplicacao.Servico
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.InternalServerError, erro.Message);
             }
         }
-        public static bool UpdateCartao(decimal valor, long num_cartao)
+        public static bool UpdateCartao(string token, decimal valor, long num_cartao)
         {
                 var cartao = selecionarCartao(valor, num_cartao);
                 using var client = new HttpClient();
@@ -143,7 +142,7 @@ namespace Aplicacao.Servico
             var data2 = new StringContent(json2, Encoding.UTF8, mediaType: "application/json");
             return data2;
         }
-        public static decimal VerificaLimiteCartao(decimal valor, long num_cartao)
+        public static decimal VerificaLimiteCartao(string token, decimal valor, long num_cartao)
         {
             using var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:5014/GetCartaoPorId");
