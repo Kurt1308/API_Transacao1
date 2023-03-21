@@ -51,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Adaptador\\Adaptador.csproj",
+      "projectUniqueName": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Adaptador\\Adaptador.csproj",
       "projectName": "Adaptador",
-      "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Adaptador\\Adaptador.csproj",
+      "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Adaptador\\Adaptador.csproj",
       "packagesPath": "C:\\Users\\lucas.dias\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Adaptador\\obj\\",
+      "outputPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Adaptador\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lucas.dias\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -72,11 +72,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\AplicacaoDto\\AplicacaoDto.csproj": {
-              "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\AplicacaoDto\\AplicacaoDto.csproj"
+            "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\AplicacaoDto\\AplicacaoDto.csproj": {
+              "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\AplicacaoDto\\AplicacaoDto.csproj"
             },
-            "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Dominio\\Dominio.csproj"
+            "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Dominio\\Dominio.csproj": {
+              "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Dominio\\Dominio.csproj"
             }
           }
         }
@@ -109,13 +109,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Adaptador\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

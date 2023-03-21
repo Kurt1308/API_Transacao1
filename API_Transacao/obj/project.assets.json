@@ -6226,11 +6226,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\API_Transacao\\API_Transacao.csproj",
+      "projectUniqueName": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\API_Transacao\\API_Transacao.csproj",
       "projectName": "API_Transacao",
-      "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\API_Transacao\\API_Transacao.csproj",
+      "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\API_Transacao\\API_Transacao.csproj",
       "packagesPath": "C:\\Users\\lucas.dias\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\API_Transacao\\obj\\",
+      "outputPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\API_Transacao\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lucas.dias\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6247,17 +6247,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\AplicacaoDto\\AplicacaoDto.csproj": {
-              "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\AplicacaoDto\\AplicacaoDto.csproj"
+            "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\AplicacaoDto\\AplicacaoDto.csproj": {
+              "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\AplicacaoDto\\AplicacaoDto.csproj"
             },
-            "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Aplicacao\\Aplicacao.csproj": {
-              "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Aplicacao\\Aplicacao.csproj"
+            "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Aplicacao\\Aplicacao.csproj": {
+              "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Aplicacao\\Aplicacao.csproj"
             },
-            "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Data\\Data.csproj"
+            "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Data\\Data.csproj": {
+              "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Data\\Data.csproj"
             },
-            "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\IoC\\IoC.csproj": {
-              "projectPath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\IoC\\IoC.csproj"
+            "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\IoC\\IoC.csproj": {
+              "projectPath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\IoC\\IoC.csproj"
             }
           }
         }
@@ -6311,13 +6311,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\API_Transacao\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

@@ -32,7 +32,7 @@ namespace Aplicacao.Servico
             _mapperTransacao = mapperTransacao;
         }
 
-        public RespostaPutTransacaoDto AtualizarTransacao(RequisicaoPutTransacaoDto obj, string accessToken)
+        public RespostaPutTransacaoDto AtualizarTransacao(RequisicaoPutTransacaoDto obj)
         {
             string mensagem = "";
             if (!mensagem.Equals(string.Empty))
@@ -83,7 +83,7 @@ namespace Aplicacao.Servico
             }
         }
         
-        public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj)
+        public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj, string accessToken)
         {
             string mensagem = "";
 

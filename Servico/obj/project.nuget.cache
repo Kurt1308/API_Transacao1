@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eczJyKQrm4jO2J15CirtBJxj5UJs/BGWYNcPmALkDDFkn/u2VnbhNQIjQUarKvJopneoVWrJ0ZxfiwgKs+aUvQ==",
+  "dgSpecHash": "8sScg91srJBnW2Qv+5tjIk4t012sMIQMKTJtX56SYlvcnXOo11wmVmP5Ie+/NNCOu1vhp9NLXQQlPEQ8bX28sg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Servico\\Servico.csproj",
+  "projectFilePath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Servico\\Servico.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Servico\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

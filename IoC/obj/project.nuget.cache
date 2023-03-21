@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rUBXQ687Y/gpP1+RalUt0p74rTEW0Dc18NUW4xxPbl4jCxJOFNqPnG0dUQTpQe4UEmCbjheHs/jeJZnKi8J4Tg==",
+  "dgSpecHash": "0n/y6MTpsVK8UQ2SlbVQoi8kuC2G5ZccSfIQELitMPOee0EviTV9fj/KXNi9Wg0EgqR9ll2boe8hSWkjVSJVkg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\IoC\\IoC.csproj",
+  "projectFilePath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\IoC\\IoC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas.dias\\.nuget\\packages\\autofac\\6.3.0\\autofac.6.3.0.nupkg.sha512",
     "C:\\Users\\lucas.dias\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -101,12 +101,5 @@
     "C:\\Users\\lucas.dias\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\lucas.dias\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\IoC\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

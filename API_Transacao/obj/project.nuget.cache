@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8c3Yk4cC6C/Jj22EUskOBJKlCNNEEsWM/HG8EJqksmAlxpkqRxRF0joq1oWZMC3OkgFhxLs97l6wkQEAVLO7ew==",
+  "dgSpecHash": "px5+r5CNQGuUoseLbZ46MUcSet6mhIW64BZZrusZCgephbLYVct2stmiEdwP660taK8lbAdfaIju3gljnsyotw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\API_Transacao\\API_Transacao.csproj",
+  "projectFilePath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\API_Transacao\\API_Transacao.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas.dias\\.nuget\\packages\\autofac\\6.3.0\\autofac.6.3.0.nupkg.sha512",
     "C:\\Users\\lucas.dias\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
@@ -109,12 +109,5 @@
     "C:\\Users\\lucas.dias\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\lucas.dias\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\API_Transacao\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

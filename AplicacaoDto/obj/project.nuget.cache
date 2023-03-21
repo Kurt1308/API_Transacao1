@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+nvyqJTTbpkrxOrvxzEjGGvsV4NOvoNuDWnjUFGWOqmmKz/FLKmU8Ytj0ZLOdOUgihIdQSzlcyBzn0cWn5/I9w==",
+  "dgSpecHash": "YGy1wh4Q63YflSikqhYF4E5L9igXvvytzWvgok44MiU706fz1t3P3/ZISNP+m9W69buMuD9Idl9MbYFcqnxXmQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\AplicacaoDto\\AplicacaoDto.csproj",
+  "projectFilePath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\AplicacaoDto\\AplicacaoDto.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\AplicacaoDto\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

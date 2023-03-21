@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YlJOskcPuLrRO2PV+xNG5PmzC2Kosd5Bm7AMsc/5lEQ9wVDpeHMukR6DNPik6DiDKhXiPwxKJZjU1jFAFKpbLQ==",
+  "dgSpecHash": "qF7AyqM0iAcfSR1PjMFLkXkG1f4+bdf+3IDlG1KItGBDlYE0jOe6/hNCHqRfg57ij2Qf8wBWsDO2WYLwO32sfg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Aplicacao\\Aplicacao.csproj",
+  "projectFilePath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Aplicacao\\Aplicacao.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas.dias\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\lucas.dias\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
@@ -14,12 +14,5 @@
     "C:\\Users\\lucas.dias\\.nuget\\packages\\system.security.cryptography.xml\\7.0.1\\system.security.cryptography.xml.7.0.1.nupkg.sha512",
     "C:\\Users\\lucas.dias\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Aplicacao\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

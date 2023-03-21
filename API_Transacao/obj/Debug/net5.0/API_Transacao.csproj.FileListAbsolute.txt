@@ -264,3 +264,8 @@ C:\PDI\Transacao\Api_Transacao\API_Transacao\API_Transacao\obj\Debug\net5.0\API_
 C:\PDI\Transacao\Api_Transacao\API_Transacao\API_Transacao\obj\Debug\net5.0\API_Transacao.genruntimeconfig.cache
 C:\PDI\Transacao\Api_Transacao\API_Transacao\API_Transacao\obj\Debug\net5.0\ref\API_Transacao.dll
 >>>>>>> 90a000293484508ece4679749ecad49813f47897
+C:\PDI\Transacao\Api_Transacao\API_Transacao\API_Transacao\obj\Debug\net5.0\staticwebassets\API_Transacao.StaticWebAssets.Pack.cache
+C:\PDI\Transacao\Api_Transacao\API_Transacao\API_Transacao\obj\Debug\net5.0\staticwebassets\msbuild.API_Transacao.Microsoft.AspNetCore.StaticWebAssets.props
+C:\PDI\Transacao\Api_Transacao\API_Transacao\API_Transacao\obj\Debug\net5.0\staticwebassets\msbuild.build.API_Transacao.props
+C:\PDI\Transacao\Api_Transacao\API_Transacao\API_Transacao\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.API_Transacao.props
+C:\PDI\Transacao\Api_Transacao\API_Transacao\API_Transacao\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.API_Transacao.props
