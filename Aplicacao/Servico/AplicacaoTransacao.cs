@@ -92,6 +92,7 @@ namespace Aplicacao.Servico
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Este cartão não possui limite disponível.");
             
             bool checkUpdate = UpdateCartao(checaLimite, obj.num_cartao, accessToken);
+
             if (!checkUpdate)
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Não foi possível atualizar o cartão.");
 
@@ -109,6 +110,7 @@ namespace Aplicacao.Servico
             }
         }
         public static bool UpdateCartao(decimal valor, long num_cartao, string accessToken)
+
         {
             //Consertar
             using var client = new HttpClient();
@@ -154,6 +156,7 @@ namespace Aplicacao.Servico
             return data2;
         }
         public static decimal VerificaLimiteCartao(decimal valor, long num_cartao, string accessToken)
+
         {
             using var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:5014/GetCartaoPorId");
