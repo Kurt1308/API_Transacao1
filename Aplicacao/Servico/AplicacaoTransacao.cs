@@ -83,15 +83,15 @@ namespace Aplicacao.Servico
             }
         }
         
-        public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj)
+        public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj, string accessToken)
         {
             string mensagem = "";
 
-            decimal checaLimite = VerificaLimiteCartao(obj.valor, obj.num_cartao);
+            decimal checaLimite = VerificaLimiteCartao(obj.valor, obj.num_cartao, accessToken);
             if(checaLimite < 0)
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Este cartão não possui limite disponível.");
             
-            bool checkUpdate = UpdateCartao(checaLimite, obj.num_cartao);
+            bool checkUpdate = UpdateCartao(checaLimite, obj.num_cartao, accessToken);
             if (!checkUpdate)
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.Forbidden, "Não foi possível atualizar o cartão.");
 
@@ -108,7 +108,7 @@ namespace Aplicacao.Servico
                 return _mapperTransacao.MapperToDtoInsert(HttpStatusCode.InternalServerError, erro.Message);
             }
         }
-        public static bool UpdateCartao(decimal valor, long num_cartao)
+        public static bool UpdateCartao(decimal valor, long num_cartao, string accessToken)
         {
                 var cartao = selecionarCartao(valor, num_cartao);
                 using var client = new HttpClient();
@@ -143,7 +143,7 @@ namespace Aplicacao.Servico
             var data2 = new StringContent(json2, Encoding.UTF8, mediaType: "application/json");
             return data2;
         }
-        public static decimal VerificaLimiteCartao(decimal valor, long num_cartao)
+        public static decimal VerificaLimiteCartao(decimal valor, long num_cartao, string accessToken)
         {
             using var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:5014/GetCartaoPorId");
@@ -164,7 +164,7 @@ namespace Aplicacao.Servico
                 {
                     
                     var valor22 = Convert.ToDecimal(GetValor(dataObjects));
-                    int v1 = Convert.ToInt32(valor);
+                    decimal v1 = valor;
                     decimal v2 = valor22;
 
                     decimal v = v2 - v1;

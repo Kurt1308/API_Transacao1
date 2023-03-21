@@ -26,3 +26,17 @@ C:\Users\lucas.dias\Desktop\API_Transacao\Dominio\obj\Debug\net5.0\refint\Domini
 C:\Users\lucas.dias\Desktop\API_Transacao\Dominio\obj\Debug\net5.0\Dominio.xml
 C:\Users\lucas.dias\Desktop\API_Transacao\Dominio\obj\Debug\net5.0\Dominio.pdb
 C:\Users\lucas.dias\Desktop\API_Transacao\Dominio\obj\Debug\net5.0\ref\Dominio.dll
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\bin\Debug\net5.0\Dominio.deps.json
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\bin\Debug\net5.0\Dominio.dll
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\bin\Debug\net5.0\Dominio.pdb
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\bin\Debug\net5.0\Dominio.xml
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\obj\Debug\net5.0\Dominio.csproj.AssemblyReference.cache
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\obj\Debug\net5.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfoInputs.cache
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\obj\Debug\net5.0\Dominio.AssemblyInfo.cs
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\obj\Debug\net5.0\Dominio.csproj.CoreCompileInputs.cache
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\obj\Debug\net5.0\Dominio.dll
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\obj\Debug\net5.0\refint\Dominio.dll
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\obj\Debug\net5.0\Dominio.xml
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\obj\Debug\net5.0\Dominio.pdb
+C:\PDI\Transacao\Api_Transacao\API_Transacao\Dominio\obj\Debug\net5.0\ref\Dominio.dll

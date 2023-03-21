@@ -91,7 +91,8 @@ namespace API_Transacao.Controllers
         [Route("InserirTransacao")]
         public RespostaInsertTransacaoDto Insert([FromBody] RequisicaoInsertTransacaoDto dto)
         {
-            var retorno = _aplicacaoTransacao.Insert(dto);
+            var accessToken = HttpContext.Request.Headers["Authorization"];
+            var retorno = _aplicacaoTransacao.Insert(dto, accessToken);
             HttpContext.Response.StatusCode = (int)retorno.codRetorno;
             return retorno;
         }
