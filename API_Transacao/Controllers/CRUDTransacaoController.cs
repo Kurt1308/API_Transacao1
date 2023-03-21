@@ -29,9 +29,8 @@ namespace API_Transacao.Controllers
         [ProducesResponseType(typeof(RespostaPutTransacaoDto), 500)]
         [HttpPut("AtualizaCartao")]
         public RespostaPutTransacaoDto Put([FromBody] RequisicaoPutTransacaoDto dto)
-        {
-            var accessToken = HttpContext.Request.Headers["Authorization"];
-            var retorno = _aplicacaoTransacao.AtualizarTransacao(dto, accessToken);
+        {          
+            var retorno = _aplicacaoTransacao.AtualizarTransacao(dto);
             HttpContext.Response.StatusCode = (int)retorno.codRetorno;
             return retorno;
         }
@@ -92,7 +91,8 @@ namespace API_Transacao.Controllers
         [Route("InserirTransacao")]
         public RespostaInsertTransacaoDto Insert([FromBody] RequisicaoInsertTransacaoDto dto)
         {
-            var retorno = _aplicacaoTransacao.Insert(dto);
+            var accessToken = HttpContext.Request.Headers["Authorization"];
+            var retorno = _aplicacaoTransacao.Insert(dto, accessToken);
             HttpContext.Response.StatusCode = (int)retorno.codRetorno;
             return retorno;
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ONw0ayOvFv4bSwKl5/Uc3EcUfoeIoGPlmPpWectlFzxxbVpP+QW+3V1UpHlrAH/1vjxuAciRMnDeL6R584WKjw==",
+  "dgSpecHash": "ATt2yudQf5ceoAkJltVA16piqlm0gG37v5G4vKpGlhBHSX7F5THqtk9nO1WXdwWaOqTJdPePsosKs2cjxIes0g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Core\\Core.csproj",
+  "projectFilePath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Core\\Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

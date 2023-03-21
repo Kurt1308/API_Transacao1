@@ -10,9 +10,9 @@ namespace Aplicacao.Interface
 {
     public interface IAplicacaoTransacao
     {
-        RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto requisicaoInsertTransacaoDto);
+        RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto requisicaoInsertTransacaoDto, string accessToken);
         RespostaGetTransacaoDto GetAllTransacoes();
         RespostaGetByIdTransacaoDto GetTransacaoById(RequisicaoGetByIdTransacaoDto dto);
-        RespostaPutTransacaoDto AtualizarTransacao(RequisicaoPutTransacaoDto dto, string accessToken);
+        RespostaPutTransacaoDto AtualizarTransacao(RequisicaoPutTransacaoDto dto);
     }
 }

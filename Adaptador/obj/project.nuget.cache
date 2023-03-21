@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MHD3UZz64WmOnRSTqiFrICOkKgNCzFTVnfECL9U/m0sc2RHTpJBPjdrjDmVU96UviIve12WHWARIyOr8ttUEMQ==",
+  "dgSpecHash": "fmYgroHQlOTrLjZySdWYyz+6RRpPPSKYOkCwpLSKFlaCZt2L+Lc637CGYo1DpKeKYHN9weLyEe+LXrQVvxjbLQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas.dias\\Desktop\\API_Transacao\\Adaptador\\Adaptador.csproj",
+  "projectFilePath": "C:\\PDI\\Transacao\\Api_Transacao\\API_Transacao\\Adaptador\\Adaptador.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
