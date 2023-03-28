@@ -85,7 +85,7 @@ namespace Aplicacao.Servico
         
         public RespostaInsertTransacaoDto Insert(RequisicaoInsertTransacaoDto obj, string accessToken)
         {
-            string mensagem = accessToken;
+            string mensagem = "";
 
             decimal checaLimite = VerificaLimiteCartao(obj.valor, obj.num_cartao, accessToken);
             if(checaLimite < 0)
